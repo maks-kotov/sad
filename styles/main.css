@@ -8,7 +8,8 @@ body {
     font-style: normal;
 
     display: flex;
-    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
     /* background-color: #ffffff; */
     color: #363636;
     line-height: 1.6;
@@ -58,6 +59,8 @@ header input {
 }
 
 /* header endddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd  */
+
+/* **************************************main*************************************************** */
 .catalog h2 {
     text-align: center;
 }
@@ -104,6 +107,50 @@ header input {
 .card__desc {
     margin-left: 10px;
 }
+/* **************************************mainEND*************************************************** */
+
+/* **************************************footer*************************************************** */
+
+footer {
+    padding-top: 10px;
+    height: 150px;
+    background-color: #363636;
+    color: var(--color1);
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    /* padding: 30px; */
+}
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    flex-grow: 1;
+}
+.footer__block li {
+    margin-bottom: 5px;
+}
+.footer__links a {
+    color: var(--color1);
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer__copyBlock {
+    width: 85%;
+    text-align: center;
+}
+.footer__copy {
+    color: #fff;
+    font-size: 12px;
+
+}
+
+
+/* **************************************footerEND*************************************************** */
+
 
 /********************************медиа запросы******************************************* */
 
@@ -111,6 +158,19 @@ header input {
     header {
         flex-flow: column wrap;        
         gap: 20px 0px;
+    }
+    .menu {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .search {
+        order: 2;
+    }
+    .communities {
+        order: 1;
+    }
+    .write {
+        order: 0;
     }
 }
 /* @media (max-width: 992px) {
