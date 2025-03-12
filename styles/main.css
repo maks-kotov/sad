@@ -25,20 +25,34 @@ header {
     border-radius: 12px;
     margin-bottom: 20px;
     color: #fff;
+    justify-content: space-between;
+    padding: 30px;
+
 }
 .logo  {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    /* color: #363636 !important; */
 }
 .logo a {
-    color: #fff;
+    color: #363636;
+}
+.logo-img {
+    max-height: 50px;
+    max-width: 80px;
+}
+.menu {
+    display: flex;
+    gap: 0 20px;
 }
 header input {
     color: #000;
 }
 .header__item {
-    padding: 30px;
     font-weight: 700;
     color: #fff;
 }
@@ -72,11 +86,14 @@ header input {
     /* min-width: 300px; */
     max-width: 300px;
     /* min-height: 300px; */
-    max-height: 300px;
+    max-height: 222px;
 }
 .column {
     display: flex;
     flex-direction: column;
+}
+.center {
+    align-items: center;
 }
 .card__title {
     font-size: 20px;
@@ -88,3 +105,26 @@ header input {
     margin-left: 10px;
 }
 
+/********************************медиа запросы******************************************* */
+
+@media (max-width: 1155px) {
+    header {
+        flex-flow: column wrap;        
+        gap: 20px 0px;
+    }
+}
+/* @media (max-width: 992px) {
+    body {
+      font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+}
+@media (max-width: 576px) {
+    body {
+      font-size: 14px;
+    }
+} */
