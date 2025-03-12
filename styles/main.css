@@ -178,13 +178,39 @@ footer {
       font-size: 14px;
     }
 }
-@media (max-width: 768px) {
-    body {
-      font-size: 14px;
+*/
+@media (max-width: 850px) {
+    .menu {
+        flex-flow: column wrap;
+        align-items: center;
+        gap: 15px 0
     }
 }
-@media (max-width: 576px) {
-    body {
-      font-size: 14px;
+ @media (max-width: 576px) {
+    .card {
+        flex-flow: column wrap;
+        align-items: center;
+        gap: 20px 0;
     }
-} */
+    .card__title {
+        text-align: center;
+    }
+    .card__containerImg {
+        order: 1
+    }
+    .column {
+        order: 0;
+    }
+    .card__img {
+        /* max-width: 450px; */
+        /* max-height: 333px; */
+        max-width: 100%;
+        max-height: 100%;
+
+    }
+}  
+@media (max-width: 433px) {
+.logo  {
+    flex-flow: column wrap;
+}
+}
