@@ -18,6 +18,9 @@ body {
 .container {
     width: 85%;
 }
+.hide {
+    display: none;
+}
 /* header startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  */
 header {
     display: flex;
