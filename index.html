@@ -23,14 +23,33 @@
                             </a>
                             <a href="./index.html">Зелёный Сад<span class="hideIfDisplayLessThan355px"> с. Грачёвка</span></a>
                 </div>
-                <div class="menu">
-                        <div class="search">
+                <ul class="menu">
+                        <li class="search">
                             Поиск<span class="hideIfDisplayLessThan433px"> по сайту</span>:
                             <input type="text"/>
-                        </div>
-                    <a href="#" class="header__item write">Написать</a>
-                    <a href="#" class="header__item communities">Сообщества</a>
-                </div>
+                        </li>
+                    <li class="header__item write">
+                        <a href="#">Написать <span class="header__item-list">&blacktriangledown;</span></a>
+                    <!-- контекстное меню  -->
+                        <ul class="header__contextMenu">
+                            <a href="#"><li>ВК <img class="contextMenu__icon" src="./images/icon-vk.png" alt="tg"></li></a>
+                            <a href="#"><li>Телеграм <img class="contextMenu__icon" src="./images/icon_tg.png" alt="tg"></li></a>
+                            <a href="#"><li>Одноклассники <img class="contextMenu__icon" src="./images/icon_odnoklasniki.png" alt="tg"></li></a>
+                        </ul>
+                    </li>
+                    <li class="header__item communities">
+                        <a href="#">Сообщества <span class="header__item-list">&blacktriangledown;</span></a>
+                    
+                        <!-- контекстное меню  -->
+                            <ul class="header__contextMenu">
+                                <a href="#"><li>ВК <img class="contextMenu__icon" src="./images/icon-vk.png" alt="tg"></li></a>
+                            <a href="#"><li>Телеграм <img class="contextMenu__icon" src="./images/icon_tg.png" alt="tg"></li></a>
+                            </ul>
+                    </li>
+                        
+                    
+                </ul>
+
             </header>
             <main>
                 <section class="catalog">

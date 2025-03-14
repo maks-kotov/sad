@@ -1,3 +1,4 @@
+/* я css */
 :root {
     --color1: #46d146;
 }
@@ -56,6 +57,51 @@ header input {
 .header__item {
     font-weight: 700;
     color: #fff;
+    position: relative;
+}
+.header__item a {
+    color: #fff;
+}
+.header__item-list {
+    font-size: 10px;
+}
+.header__contextMenu {
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    display: none;
+}
+.header__contextMenu a {
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+}
+.header__contextMenu li {
+    /* border-bottom: solid 1px #000; */
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 3px;
+    display: flex;
+
+}
+.header__contextMenu li:hover {
+    background-color: var(--color1);
+    color: #fff;
+    font-weight: 700;
+    transition: all .1s ease-in;
+}
+.contextMenu__icon {
+    max-width: none;
+    width: 20px;
+    height: 20px;
+}
+.write:hover > .header__contextMenu {
+    /* display: initial;*/
+    display: block;
+}
+.communities:hover > .header__contextMenu {
+    /* display: initial;*/
+    display: block;
 }
 
 /* header endddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd  */
@@ -236,3 +282,4 @@ header {
         display: none;
     }
 }
+
