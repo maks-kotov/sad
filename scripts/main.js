@@ -8,10 +8,17 @@ const resultsList = document.getElementById('resultsList')
 
 titles.forEach(el => {
     el.id = el.textContent // эт мне просто влом проставлять каждому элементу id
-    const result = `<a href="${'#'+el.id}"><li class="result">${el.textContent}</li></a>`
-    
+    const result = `<a href="${'#'+el.id}"><li class="result">${el.textContent}</li></a>`    
     resultsList.insertAdjacentHTML('beforeend', result)
 })
+//очищать инпут и убирать контекстное меню при нажатии на элемент списка 
+for (const el of resultsList.children) {
+    const title = el.children[0]
+    title.addEventListener('click', () => {
+        resultsList.style.display = 'none'
+        input.value = ''
+    })
+}
 // resultsList.style.display="block"
 input.addEventListener('input', function() {
     let value = this.value.trim().toLowerCase()
