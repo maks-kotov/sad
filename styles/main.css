@@ -15,6 +15,11 @@ body {
     color: #363636;
     line-height: 1.6;
 }
+mark {
+    color: inherit;
+    background: none;
+    text-decoration: underline;
+}
 .container {
     width: 85%;
 }
@@ -75,6 +80,13 @@ header input {
     padding: 3px;
     color: #000;
     border: 1px solid rgba(0,0,0, .1);
+    
+}
+.result:hover {
+    background-color: var(--color1); /*одинаковые строчки с contextMenu */
+    color: #fff;
+    font-weight: 700;
+    transition: all .1s ease-in;
 }
 .header__item {
     font-weight: 700;
