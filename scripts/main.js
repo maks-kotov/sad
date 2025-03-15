@@ -7,47 +7,44 @@ const inputBlock = document.querySelector('#search')
 const resultsList = document.getElementById('resultsList')
 
 titles.forEach(el => {
-    const result = document.createElement('li')
-    result.style.width="100%"
-    result.style.height="30px"
-    result.style.backgroundColor="#000"
-    result.style.marginBottom="10px"
-    result.textContent = el.textContent
-    resultsList.insertAdjacentElement('beforeend', result)
-    result.style.color="#fff"
-})
-
-input.addEventListener('input', function() {
-    let value = this.value.trim().toLowerCase()
+    const result = `<a href="#"><li class="result">${el.textContent}</li></a>`
     
-    if(value !== '') {
-
-
-   for (const el of resultsList.children) {    
-
-        if(el.textContent.toLowerCase().search(value) === -1) {
-            el.innerHTML = el.textContent   //по факту это можно и не ставить
-            el.classList.add('hide')     
-                 
-        }
-        else {
-            let str = el.textContent
-            el.innerHTML=insertMark(str, el.textContent.toLowerCase().search(value), value.length)
-        }
-   }
-
-            resultsList.style.display="block"
-
-    }
-    else {
-       for (const el of resultsList.children) {
-        el.classList.remove('hide')
-        el.innerHTML = el.textContent
-       }
-       resultsList.style.display="none"
-    }
+    resultsList.insertAdjacentHTML('beforeend', result)
 })
+resultsList.style.display="block"
+// input.addEventListener('input', function() {
+//     let value = this.value.trim().toLowerCase()
+    
+//     if(value !== '') {
 
-function insertMark(string, pos, len) {
-    return string.slice(0, pos) + '<mark>' + string.slice(pos, pos+len) + '</mark>' + string.slice(pos+len, string.length) 
-}
+
+//    for (const el of resultsList.children) {    
+        
+//         const title = el.children[0] // title - это тег li, вложенный в a, (содержит название сорта)
+        
+//         if(title.textContent.toLowerCase().search(value) === -1) {
+//             title.innerHTML = el.textContent   //по факту это можно и не ставить
+//             title.classList.add('hide')     
+//         }
+//         else {
+//             let str = title.textContent
+//             title.innerHTML=insertMark(str, el.textContent.toLowerCase().search(value), value.length)
+//         }
+//    }
+
+//             resultsList.style.display="block"
+
+//     }
+//     else {
+//        for (const el of resultsList.children) {
+//         const title = el.children[0] // title - это тег li, вложенный в a, (содержит название сорта)
+//         title.classList.remove('hide')
+//         title.innerHTML = el.textContent
+//        }
+//        resultsList.style.display="none"
+//     }
+// })
+
+// function insertMark(string, pos, len) {
+//     return string.slice(0, pos) + '<mark>' + string.slice(pos, pos+len) + '</mark>' + string.slice(pos+len, string.length) 
+// }
