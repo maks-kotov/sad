@@ -22,27 +22,24 @@ input.addEventListener('input', function() {
     
     if(value !== '') {
 
-        titles.forEach(el => {
-            // search возвращает -1 если подстроки нету в строке
-            // search возвращает индекс символа(или начало последовательности символов) если он есть в строке
-
+   for (const el of resultsList.childNodes) {
         if(el.textContent.toLowerCase().search(value) === -1) {
-            el.innerHTML = el.textContent   
-        }   
+            el.innerHTML = el.textContent   //по факту это можно и не ставить
+        }
         else {
             let str = el.textContent
             el.innerHTML=insertMark(str, el.textContent.toLowerCase().search(value), value.length)
         }
-    });
+   }
+
             resultsList.style.display="block"
 
     }
     else {
-        titles.forEach(el => {
-                el.innerHTML = el.textContent
-        });
-        resultsList.style.display="none"
-
+       for (const el of resultsList.childNodes) {
+        el.innerHTML = el.textContent
+       }
+       resultsList.style.display="none"
     }
 })
 
