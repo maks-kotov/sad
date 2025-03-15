@@ -7,7 +7,8 @@ const inputBlock = document.querySelector('#search')
 const resultsList = document.getElementById('resultsList')
 
 titles.forEach(el => {
-    const result = `<a href="#"><li class="result">${el.textContent}</li></a>`
+    el.id = el.textContent // эт мне просто влом проставлять каждому элементу id
+    const result = `<a href="${'#'+el.id}"><li class="result">${el.textContent}</li></a>`
     
     resultsList.insertAdjacentHTML('beforeend', result)
 })
