@@ -22,9 +22,13 @@ input.addEventListener('input', function() {
     
     if(value !== '') {
 
-   for (const el of resultsList.childNodes) {
+
+   for (const el of resultsList.children) {    
+
         if(el.textContent.toLowerCase().search(value) === -1) {
             el.innerHTML = el.textContent   //по факту это можно и не ставить
+            el.classList.add('hide')     
+                 
         }
         else {
             let str = el.textContent
@@ -36,7 +40,8 @@ input.addEventListener('input', function() {
 
     }
     else {
-       for (const el of resultsList.childNodes) {
+       for (const el of resultsList.children) {
+        el.classList.remove('hide')
         el.innerHTML = el.textContent
        }
        resultsList.style.display="none"
