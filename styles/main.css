@@ -60,6 +60,15 @@ header {
 header input {
     color: #000;
 }
+.resultsList {
+    position: absolute;
+    width: 59%;
+    height: 300px;
+    background-color: #fff;
+    display: none;
+    right: 0;
+    /* padding: 10px; */
+}
 .header__item {
     font-weight: 700;
     color: #fff;

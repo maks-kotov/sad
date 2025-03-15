@@ -4,15 +4,18 @@
 const input = document.getElementById('input')
 const titles = document.querySelectorAll('.card__title')
 const inputBlock = document.querySelector('#search')
+const resultsList = document.getElementById('resultsList')
 
-const results = document.createElement('div')
-results.style.position="absolute"
-results.style.width="59%"
-results.style.height="300px"
-results.style.backgroundColor="#fff"
-results.style.display="none"
-results.style.right="0"
-inputBlock.insertAdjacentElement('beforeend', results)
+titles.forEach(el => {
+    const result = document.createElement('li')
+    result.style.width="100%"
+    result.style.height="30px"
+    result.style.backgroundColor="#000"
+    result.style.marginBottom="10px"
+    result.textContent = el.textContent
+    resultsList.insertAdjacentElement('beforeend', result)
+    result.style.color="#fff"
+})
 
 input.addEventListener('input', function() {
     let value = this.value.trim().toLowerCase()
@@ -22,6 +25,7 @@ input.addEventListener('input', function() {
         titles.forEach(el => {
             // search возвращает -1 если подстроки нету в строке
             // search возвращает индекс символа(или начало последовательности символов) если он есть в строке
+
         if(el.textContent.toLowerCase().search(value) === -1) {
             el.innerHTML = el.textContent   
         }   
@@ -30,12 +34,15 @@ input.addEventListener('input', function() {
             el.innerHTML=insertMark(str, el.textContent.toLowerCase().search(value), value.length)
         }
     });
-            results.style.display="block"
+            resultsList.style.display="block"
+
     }
     else {
         titles.forEach(el => {
                 el.innerHTML = el.textContent
         });
+        resultsList.style.display="none"
+
     }
 })
 
