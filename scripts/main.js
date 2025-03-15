@@ -3,6 +3,16 @@
  */
 const input = document.getElementById('input')
 const titles = document.querySelectorAll('.card__title')
+const inputBlock = document.querySelector('#search')
+
+const results = document.createElement('div')
+results.style.position="absolute"
+results.style.width="59%"
+results.style.height="300px"
+results.style.backgroundColor="#fff"
+results.style.display="none"
+results.style.right="0"
+inputBlock.insertAdjacentElement('beforeend', results)
 
 input.addEventListener('input', function() {
     let value = this.value.trim().toLowerCase()
@@ -13,29 +23,17 @@ input.addEventListener('input', function() {
             // search возвращает -1 если подстроки нету в строке
             // search возвращает индекс символа(или начало последовательности символов) если он есть в строке
         if(el.textContent.toLowerCase().search(value) === -1) {
-            // el.classList.add('hide')
             el.innerHTML = el.textContent   
-            // console.log('не совпадает');
-            
-            
-            // console.log('совпадает с каким то деревом');
-            
         }   
         else {
-                console.log(el.textContent.toLowerCase().search(value));
-                console.log(el.textContent.toLowerCase());
-    //         el.classList.remove('hide')
             let str = el.textContent
             el.innerHTML=insertMark(str, el.textContent.toLowerCase().search(value), value.length)
-            // console.log(insertMark(str, el.textContent.toLowerCase().search(value), value.length));
-            
-}
+        }
     });
+            results.style.display="block"
     }
-    // если ничего значение в инпут пустое - удаляем .hide у элементов
     else {
         titles.forEach(el => {
-    //             el.classList.remove('hide')
                 el.innerHTML = el.textContent
         });
     }
