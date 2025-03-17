@@ -12,6 +12,7 @@ titles.forEach(el => {
     const result = `<a href="${'#'+el.id}"><li class="result">${el.textContent}</li></a>`    
     resultsList.insertAdjacentHTML('beforeend', result)
 })
+
 //очищать инпут и убирать контекстное меню при нажатии на элемент списка 
 for (const el of resultsList.children) {
     const title = el.children[0]
@@ -26,6 +27,7 @@ input.addEventListener('input', function() {
     
     if(value !== '') {
 
+    resultsList.style.display="block"
 
    for (const el of resultsList.children) {    
         
@@ -37,22 +39,17 @@ input.addEventListener('input', function() {
         }
         else {
             title.classList.remove('hide')     
-            console.log(`Я совпадаю\nvalue=${value}`);
-            let str = title.textContent
-            title.innerHTML=insertMark(str, el.textContent.toLowerCase().search(value), value.length)
+            title.innerHTML=insertMark(title.textContent, el.textContent.toLowerCase().search(value), value.length)
         }
    }
-
-            resultsList.style.display="block"
-
-    }
+}
     else {
-       for (const el of resultsList.children) {
-        const title = el.children[0] // title - это тег li, вложенный в a, (содержит название сорта)
-        title.classList.remove('hide')
-        title.innerHTML = el.textContent
+        resultsList.style.display="none"
+        for (const el of resultsList.children) {
+            const title = el.children[0] // title - это тег li, вложенный в a, (содержит название сорта)
+            title.classList.remove('hide')
+            title.innerHTML = el.textContent
        }
-       resultsList.style.display="none"
     }
 })
 
