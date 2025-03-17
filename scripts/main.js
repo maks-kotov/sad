@@ -1,5 +1,6 @@
 /**
- * осталось сделать рабочий поиск, прикрпить ссылки на вк тг и одноклассники, мб поменять дизайн и попробовать посадить сайт на реакт
+ * осталось сделать рабочий поиск, прикрпить ссылки на вк тг и одноклассники, мб посадить сайт на реакт и вьебать сюда
+ * препроцессор
  */
 const input = document.getElementById('input')
 const titles = document.querySelectorAll('.card__title')
@@ -35,6 +36,8 @@ input.addEventListener('input', function() {
             title.classList.add('hide')     
         }
         else {
+            title.classList.remove('hide')     
+            console.log(`Я совпадаю\nvalue=${value}`);
             let str = title.textContent
             title.innerHTML=insertMark(str, el.textContent.toLowerCase().search(value), value.length)
         }
