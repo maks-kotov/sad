@@ -11,7 +11,6 @@ body {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    /* background-color: #ffffff; */
     color: #363636;
     line-height: 1.6;
 }
@@ -109,7 +108,7 @@ header input {
     font-weight: 400;
 }
 .header__contextMenu li {
-    /* border-bottom: solid 1px #000; */
+    min-width: 105px;
     width: 100%;
     border: 1px solid rgba(0, 0, 0, .1);
     padding: 3px;
