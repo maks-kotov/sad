@@ -1,6 +1,6 @@
 /* я css */
 :root {
-    --color1: #46d146;
+    --color1: rgb(202, 202, 202);
 }
 body {
     font-family: "Open Sans", serif;
@@ -31,290 +31,28 @@ header {
     align-items: center;
     gap: 0 10px;
     background-color: var(--color1);
-    border-radius: 12px;
+    /* border-radius: 2px; */
     margin-bottom: 20px;
     color: #fff;
     justify-content: space-between;
     padding: 30px;
 
 }
-.logo  {
-    /* flex-grow: 1; */
-    font-weight: 700;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 0 10px;
-    /* color: #363636 !important; */
-}
-.logo a {
-    color: #363636;
-}
-.logo-img {
-    max-height: 50px;
-    max-width: 80px;
-}
-.menu {
-    display: flex;
-    gap: 0 20px;
-}
-.search {
-    position: relative;   
-}
-header input {
-    color: #000;
-}
-.resultsList {
-    position: absolute;
-    width: 59%;
-    background-color: #fff;
-    display: none;
-    right: 0;
-}
-.result {
-    width: 100%;
-    background-color: #fff;
-    padding: 3px;
-    color: #000;
-    border: 1px solid rgba(0,0,0, .1);
-    
-}
-.result:hover {
-    background-color: var(--color1); /*одинаковые строчки с contextMenu */
-    color: #fff;
-    font-weight: 700;
-    transition: all .1s ease-in;
-}
-.header__item {
-    font-weight: 700;
-    color: #fff;
-    position: relative;
-}
-.header__item a {
-    color: #fff;
-}
-.header__item-list {
-    font-size: 10px;
-}
-.header__contextMenu {
-    position: absolute;
-    left: 0;
-    background-color: #fff;
-    display: none;
-}
-.header__contextMenu a {
-    font-size: 14px;
-    color: #000;
-    font-weight: 400;
-}
-.header__contextMenu li {
-    min-width: 105px;
-    width: 100%;
-    border: 1px solid rgba(0, 0, 0, .1);
-    padding: 3px;
-    display: flex;
-    justify-content: space-between;
-}
-.header__contextMenu li:hover {
-    background-color: var(--color1);
-    color: #fff;
-    font-weight: 700;
-    transition: all .1s ease-in;
-}
-.contextMenu__icon {
-    max-width: none;
-    width: 20px;
-    height: 20px;
-}
-.write:hover > .header__contextMenu {
-    /* display: initial;*/
-    display: block;
-}
-.communities:hover > .header__contextMenu {
-    /* display: initial;*/
-    display: block;
-}
-
 /* header endddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd  */
 
-/* **************************************main*************************************************** */
-.catalog h2 {
-    text-align: center;
+/* **************************************intro*************************************************** */
+
+.intro {
+    display: flex;
+    /* background-color: gray; */
+    justify-content: space-around;
+    gap: 0 30px;
 }
-.catalog__title {
-    font-size: 22px;
-    font-weight: 700;
-}
-.catalog hr {
-    margin: 20px 0;
-    height: 1px;
+.intro__slider {
     width: 100%;
-    background-color: #cfcfcf;
+    background-color: rgb(202, 202, 202);
 }
-.card {
-    display: flex;
-    gap: 0 20px;
-    margin-bottom: 50px;
-}
-
-/* .card__containerImg {
-    width: 350px;
-    height: 350px;
-} */
-.card__img {
-    /* object-fit: contain; */
-    /* min-width: 300px; */
-    max-width: 300px;
-    /* min-height: 300px; */
-    max-height: 222px;
-}
-.column {
-    display: flex;
-    flex-direction: column;
-}
-.center {
-    align-items: center;
-}
-.card__title {
-    font-size: 20px;
-    font-weight: 700;
-    padding: 5px 10px;
-    background-color: var(--color1);
-}
-.card__desc {
-    margin-left: 10px;
-}
-/* **************************************mainEND*************************************************** */
-
-/* **************************************footer************************************************* */
-
-footer {
-    padding-top: 10px;
-    height: 150px;
-    background-color: #363636;
-    color: var(--color1);
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    /* padding: 30px; */
-}
-.footer__links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 85%;
-    flex-grow: 1;
-}
-.footer__block li {
-    margin-bottom: 5px;
-}
-.footer__links a {
-    color: var(--color1);
-    text-decoration: none;
-    font-size: 14px;
-}
-.footer__copyBlock {
-    width: 85%;
-    text-align: center;
-}
-.footer__copy {
-    color: #fff;
-    font-size: 12px;
-
-}
-
-
-/* **************************************footerEND*************************************************** */
-
-
-/********************************медиа запросы****************************************** */
-
-@media (max-width: 1155px) {
-
-    header {
-        flex-flow: column wrap;        
-        gap: 20px 0px;
-    }
-    .menu {
-        justify-content: space-between;
-        width: 100%;
-    }
-    .search {
-        order: 2;
-    }
-    .communities {
-        order: 1;
-    }
-    .write {
-        order: 0;
-    }
-
-}
-/* @media (max-width: 992px) {
-    body {
-      font-size: 14px;
-    }
-}
-*/
-@media (max-width: 850px) {
-
-    .menu {
-        flex-flow: column wrap;
-        align-items: center;
-        gap: 15px 0
-    }
-    .header__contextMenu {
-        top: -32px;
-        left: 105px;
-    }
-
-}
- @media (max-width: 576px) {
-
-    .card {
-        flex-flow: column wrap;
-        align-items: center;
-        gap: 20px 0;
-    }
-    .card__title {
-        text-align: center;
-    }
-    .card__containerImg {
-        order: 1
-    }
-    .column {
-        order: 0;
-    }
-    .card__img {
-        /* max-width: 450px; */
-        /* max-height: 333px; */
-        max-width: 100%;
-        max-height: 100%;
-
-    }
-
-}  
-@media (max-width: 433px) {
-
-.logo  {
-    flex-flow: column wrap;
-}
-.hideIfDisplayLessThan433px {
-    display: none;
-}
-/* .container {
+.intro__description {
     width: 100%;
 }
-header {
-    border-radius: 0;
-} */
-
-}
-@media (max-width: 355px) {
-    .hideIfDisplayLessThan355px {
-        display: none;
-    }
-}
-
+/* **************************************intro end*************************************************** */
