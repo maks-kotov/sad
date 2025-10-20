@@ -31,7 +31,7 @@ header {
     display: flex;
     align-items: center;
     gap: 0 10px;
-    background-color: gray;
+    background-color: var(--color1);
     border-radius: 12px;
     margin-bottom: 20px;
     color: #fff;
