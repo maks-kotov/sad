@@ -26,11 +26,12 @@ mark {
     display: none;
 }
 /* header startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  */
+    
 header {
     display: flex;
     align-items: center;
     gap: 0 10px;
-    background-color: var(--color1);
+    background-color: gray;
     border-radius: 12px;
     margin-bottom: 20px;
     color: #fff;
