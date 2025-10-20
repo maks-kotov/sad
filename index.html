@@ -16,15 +16,44 @@
 </head>
 <body>
     
-    <div class="container" id="container">
+    <div class="container">
         <header>
 
         </header>
         
-        <section class="intro">
+        <section class="intro" id="intro">
             <div class="intro__slider"></div>
             <div class="intro__description">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique necessitatibus optio nisi velit veniam assumenda numquam ipsum! Distinctio, possimus laboriosam? Quas, obcaecati esse? Temporibus atque accusamus at ratione quae, vel eveniet, sed fugiat a incidunt repudiandae laborum, aliquam veritatis autem? Labore, earum fugiat nobis voluptatem molestiae, et esse at soluta quod quo sapiente sint ratione voluptates atque consequuntur reiciendis, illo libero ab. Modi vel alias hic officia tenetur beatae facere dignissimos minima, voluptatem voluptatum, eligendi omnis ducimus odio saepe ipsum ea, repudiandae exercitationem a laboriosam vitae minus. Voluptatum distinctio vitae culpa dolores ipsum dicta tenetur placeat. Cumque iusto pariatur deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. In commodi dignissimos sunt, tempore repellat expedita suscipit tenetur sapiente, qui, corrupti ab quibusdam quas a! Quam placeat nam animi unde sequi fuga nisi similique fugit dignissimos. Veniam doloribus unde amet eveniet odit, deleniti, dicta aspernatur repellat sunt ex ullam ut reiciendis.
+            </div>
+        </section>
+        <!-- здесь разметка вставленная из джс -->
+        <section class="apples">
+            <div class="apples__text">яблони</div>
+        </section>
+        <section class="card">
+            <div class="card__image">
+
+            </div>
+            <div class="card__description">
+                <div class="description__text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa suscipit dolorum ab ex! Ut dolores magnam omnis. Asperiores nobis delectus accusantium ipsa nisi quo quam enim quibusdam cum. Omnis dolorum at facilis velit laudantium illum expedita fuga dicta? Natus asperiores tempora nulla provident, ipsam minus repudiandae excepturi aspernatur vel fugiat!
+                    </p>
+                    <p>
+                        asdss: asdda
+                    </p>
+                    <p>
+                        asddd: sasdd
+                    </p>
+                    <p>
+                        asddasdddd: aq
+                    </p>
+                </div>
+                <div class="description__bottom">
+                    <span class="description__price">цена: <span id="price"></span></span>
+                    <span class="description__button">кнопка</span>
+                </div>
             </div>
         </section>
     </div>
@@ -33,5 +62,23 @@
     
     
     <script src="scripts/main.js"></script>
+
+    <script>
+
+        window.addEventListener('beforeunload', () => {
+    localStorage.setItem('scrollPosition', window.scrollY);
+});
+
+    // Восстанавливаем позицию прокрутки после загрузки
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedScrollPosition = localStorage.getItem('scrollPosition');
+        if (savedScrollPosition) {
+            window.scrollTo(0, parseInt(savedScrollPosition));
+            // Удаляем сохраненную позицию, чтобы не прокручивать к ней при следующем обычном открытии
+            localStorage.removeItem('scrollPosition');
+        }
+    });
+
+    </script>
 </body>
 </html>

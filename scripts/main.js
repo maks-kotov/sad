@@ -1,8 +1,4 @@
-/**
- * осталось сделать рабочий поиск, прикрпить ссылки на вк тг и одноклассники, мб посадить сайт на реакт и вьебать сюда
- * препроцессор
- */
-const container = document.getElementById('container')
+const intro = document.getElementById('intro')
 function createTitle(text) {
     return `
         <div class="title">
@@ -10,4 +6,4 @@ function createTitle(text) {
         </div>
     `
 }
-container.appendChild(createTitle('Hello'))
+intro.insertAdjacentHTML('afterend', createTitle('Hello'))
