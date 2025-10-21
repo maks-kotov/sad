@@ -33,9 +33,36 @@ header {
     background-color: var(--color1);
     /* border-radius: 2px; */
     margin-bottom: 20px;
-    color: #fff;
     justify-content: space-between;
     padding: 30px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo > *:not(:last-child) {
+    margin-right: 10px;
+}
+.logo__img {
+    height: 50px;
+    width: 100%;
+}
+.logo__text {
+    width: 100%;
+}
+.menu {
+    display: flex;
+}
+.menu > *:not(:last-child) {
+    margin-right: 30px;
+}
+.menu_search {
+    display: flex;
+    align-items: center;
+}
+.menu_input {
+    margin-left: 5px;
+    height: 22px;
 }
 /* header endddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd  */
 
