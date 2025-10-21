@@ -32,7 +32,7 @@ header {
     align-items: center;
     gap: 0 10px;
     background-color: var(--color1);
-    border-radius: 12px;
+    border-radius: 1px;
     margin-bottom: 20px;
     color: #fff;
     justify-content: space-between;
@@ -302,9 +302,9 @@ footer {
 .logo  {
     flex-flow: column wrap;
 }
-.hideIfDisplayLessThan433px {
+/* .hideIfDisplayLessThan433px {
     display: none;
-}
+} */
 /* .container {
     width: 100%;
 }
