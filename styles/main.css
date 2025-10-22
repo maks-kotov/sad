@@ -127,10 +127,9 @@ header {
 }
 .card__image-container {
     position: relative;
-    /* width: 100%; */
 }
 .card__image {
-    /* width: 100%; */
+    max-height: 800px;
 }
 .card__title {
     text-align: center;
@@ -141,6 +140,7 @@ header {
     color: #fff;
     transform: translate(-50%, -50%);
     line-height: 1.2;
+    width: 100%;
 }
 .card__description {
     width: 100%;
@@ -173,6 +173,13 @@ header {
 footer {
     background-color: var(--color1);
     width: 100%;
-    padding: 50px;
+    padding: 0px 50;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.footer__year {
+
 }
 /* **************************************footer end*************************************************** */
