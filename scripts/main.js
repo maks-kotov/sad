@@ -165,16 +165,39 @@ input.addEventListener('input', function() {
 function createResult(start, middle, end) {
     return `${start}<mark>${middle}</mark>${end}`
 }
-
-let a = "hello bro"
-let b = "br"
-console.log(a.search(b)); //6
-console.log(a.slice(2)); // llo bro
-console.log(a.slice(2, 5)); // llo
-console.log(a.slice(0,2)); // he
 // поиск написанннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
 
-// я закончил на том чтобы понять почему при нажатии на li срабатывает a в первой версии
+// слайдер началооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооо
+
+const sliderPictures = ['./images/slider1.jpg', './images/slider2.png', './images/slider3.jpg', './images/slider5.jpeg']
+const slider = document.querySelector('.intro__img')
+// function slider() {
+    for (let i = 0; i < sliderPictures.length; i++) {
+                const path = sliderPictures[i];
+                setTimeout(() => {
+                    slider.src = path
+                    console.log('aaaa');
+                    
+                }, 3000 * i);
+    }
+    setInterval(() => {
+        for (let i = 0; i < sliderPictures.length; i++) {
+                const path = sliderPictures[i];
+                setTimeout(() => {
+                    slider.src = path
+                    console.log('aaaa');
+                    
+                }, 3000 * i);
+        }
+        console.log('начало нового цикла');
+        
+}, 12000);
+    // }
+// }
+
+
+// слайдер конецццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццц
+
 
 
 
