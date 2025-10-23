@@ -123,36 +123,39 @@ cardsInormation.forEach(card => { //вставить карточки в код
 
 //реализация поискаааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа
 for (const card of cardsInormation) { // заносим в searchResults все сорта 
-    searchResults.insertAdjacentHTML('beforeend', `<li class="search__li">
-        <a href="#${card.name}" class="search__a">${card.name}</a>
-        </li>`)
+    searchResults.insertAdjacentHTML('beforeend', `<a href="#${card.name}" class="search__a">
+        <li class="search__li">${card.name}</li>
+        </a>`)
 }
-for (const li of searchResults.children) { // добавляем всем li класс hide
-    li.classList.add('hide')            
+for (const a of searchResults.children) { // добавляем всем a класс hide (результатам)
+    a.classList.add('hide')            
 }
 input.addEventListener('input', function() {
     const inputValue = input.value.trim().toLowerCase()
+    const inputLength = inputValue.length
     if(inputValue == '') {
-        for (const li of searchResults.children) { // добавляем всем li класс hide
-            li.classList.add('hide')            
+        for (const a of searchResults.children) { // добавляем всем li класс hide
+            a.classList.add('hide')            
+            document.querySelector('.search__results').classList.add('hide')     
         }
     }
     else {
-        const inputLength = inputValue.length
-        for (const li of searchResults.children) {
-            const aText =  li.children[0].textContent.trim()
+                document.querySelector('.search__results').classList.remove('hide')
+        for (const a of searchResults.children) {
+            const liText =  a.children[0].textContent.trim()
             
-            const posStr = aText.toLowerCase().search(inputValue)
+            const posStr = liText.toLowerCase().search(inputValue)
 
             if(posStr === -1) {
-                li.classList.add('hide')
+                a.classList.add('hide')
+
             }
             else {
-                li.classList.remove('hide')
-                li.children[0].innerHTML = createResult(
-                aText.slice(0, posStr),
-                aText.slice(posStr, posStr+inputLength),
-                aText.slice(posStr+inputLength, aText.length)
+                a.classList.remove('hide')
+                a.children[0].innerHTML = createResult(
+                liText.slice(0, posStr),
+                liText.slice(posStr, posStr+inputLength),
+                liText.slice(posStr+inputLength, liText.length)
             )
             }    
         }

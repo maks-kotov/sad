@@ -69,7 +69,10 @@ header {
     background-color: #fff;
     position: absolute;
     right: 0;
-    width: 100%;
+    width: 75%;
+    /* height: 260px; */
+    /* overflow-x: hidden; */
+    /* overflow-y: scroll; */
 }
 .search__li {
     padding: 10px;
@@ -77,6 +80,11 @@ header {
 }
 .search__a {
     color: #363636;
+}
+.search__a:hover {
+    font-weight: 700;
+    background-color: var(--color1);
+    transition: all 0.1s ease-in;
 }
 .menu_el {
     position: relative;
