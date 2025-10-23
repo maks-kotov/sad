@@ -1,8 +1,11 @@
 const intro = document.getElementById('intro')
 const apples = document.getElementById('apples') //место после которого будут вставляться карточки с яблоками
 const pears = document.getElementById('pears') // место полсе которого будут встваляться карточки с грушаи
+const input = document.getElementById('input')
+const searchResults = document.getElementById('searchResults')
+// const cardsArray = document.getElementsByClassName('card')
 
-const cardsInormation = [
+const cardsInormation = [ //все данные из карточек
     {
         name: "Аксёна",
         description: "Яблоня Аксёна получила своё название в честь человека, который проводил испытания этой формы на севере Свердловской области (г. Серов) – Василия Матвеевича Аксёнова. Мякоть приятного кремового цвета, мелкозернистой консистенции, довольно плотная, но не очень хрустящая, средней сочности, аромат приятный.<br>Вкус хороший, кисло-сладкий. Вкусовые качества оценивают от 4,3 до 5,0 баллов. Вес плода средний: 110-130гр. созревает к 20 числам августа зимостойкость высокая, об этом часто упоминают садоводы. Но если сравнивать с материнской формой (Серебряное копытце), то Аксёна в этом компоненте слегка уступает. Обладает довольно мощным иммунитетом против основных болезней и вредителей культуры.<br>Особенно ценится за высокую устойчивость к 5-ти расам парши.",
@@ -86,7 +89,7 @@ function createTitle(text) {
 }
 function createCard(name, description, img, price) {
     return `
-        <section class="card">
+        <section class="card" id="${name}">
                 <div class="card__image-block">
                     <div class="card__image-container">
                         <img class="card__image" src="${img}">
@@ -115,7 +118,7 @@ function createCard(name, description, img, price) {
 }
 intro.insertAdjacentHTML('afterend', createTitle('Каталог'))
 
-cardsInormation.forEach(card => {
+cardsInormation.forEach(card => { //вставить карточки в код
     // если цена 500, то вносим карточку после надписи яблони, если 600, то груши (просто я вид не делал в массивах (вид дерева))
     if (Number(card.price) === 500) {
         apples.insertAdjacentHTML("afterend", createCard(card.name, card.description, card.img, card.price))
@@ -125,4 +128,14 @@ cardsInormation.forEach(card => {
     }
 });
 
+//реализация поиска
+for (const card of cardsInormation) { // заносим в searchResults все сорта 
+    searchResults.insertAdjacentHTML('beforeend', `<li class="search__result"><a>${card.name}</a></li>`)
+}
+input.addEventListener('input', function() {
+    const inputValue = input.value.trim().toLowerCase()
+    // console.log(inputValue);
+
+
+})
 
