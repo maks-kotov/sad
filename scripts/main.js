@@ -80,13 +80,7 @@ const cardsInormation = [ //все данные из карточек
     },
 
 ]
-function createTitle(text) {
-    return `
-        <div class="title">
-            <div class="title__text">${text}</div>
-        </div>
-    `
-}
+
 function createCard(name, description, img, price) {
     return `
         <section class="card" id="${name}">
@@ -116,7 +110,6 @@ function createCard(name, description, img, price) {
             </section>
     `
 }
-intro.insertAdjacentHTML('afterend', createTitle('Каталог'))
 
 cardsInormation.forEach(card => { //вставить карточки в код
     // если цена 500, то вносим карточку после надписи яблони, если 600, то груши (просто я вид не делал в массивах (вид дерева))
@@ -128,14 +121,57 @@ cardsInormation.forEach(card => { //вставить карточки в код
     }
 });
 
-//реализация поиска
+//реализация поискаааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа
 for (const card of cardsInormation) { // заносим в searchResults все сорта 
-    searchResults.insertAdjacentHTML('beforeend', `<li class="search__result"><a>${card.name}</a></li>`)
+    searchResults.insertAdjacentHTML('beforeend', `<li class="search__li">
+        <a href="#${card.name}" class="search__a">${card.name}</a>
+        </li>`)
+}
+for (const li of searchResults.children) { // добавляем всем li класс hide
+    li.classList.add('hide')            
 }
 input.addEventListener('input', function() {
     const inputValue = input.value.trim().toLowerCase()
-    // console.log(inputValue);
+    if(inputValue == '') {
+        for (const li of searchResults.children) { // добавляем всем li класс hide
+            li.classList.add('hide')            
+        }
+    }
+    else {
+        const inputLength = inputValue.length
+        for (const li of searchResults.children) {
+            const aText =  li.children[0].textContent.trim()
+            
+            const posStr = aText.toLowerCase().search(inputValue)
 
-
+            if(posStr === -1) {
+                li.classList.add('hide')
+            }
+            else {
+                li.classList.remove('hide')
+                li.children[0].innerHTML = createResult(
+                aText.slice(0, posStr),
+                aText.slice(posStr, posStr+inputLength),
+                aText.slice(posStr+inputLength, aText.length)
+            )
+            }    
+        }
+        
+    }
 })
+function createResult(start, middle, end) {
+    return `${start}<mark>${middle}</mark>${end}`
+}
+
+let a = "hello bro"
+let b = "br"
+console.log(a.search(b)); //6
+console.log(a.slice(2)); // llo bro
+console.log(a.slice(2, 5)); // llo
+console.log(a.slice(0,2)); // he
+// поиск написанннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
+
+// я закончил на том чтобы понять почему при нажатии на li срабатывает a в первой версии
+
+
 
