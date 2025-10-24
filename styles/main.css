@@ -26,6 +26,10 @@ mark {
 .hide {
     display: none;
 }
+.active {
+    /* display: block !important; */
+    visibility: visible !important;
+}
 /* header startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  */
 header {
     display: flex;
@@ -129,13 +133,19 @@ header {
     gap: 0 20px;
     margin-bottom: 30px;
 }
-.intro__slider {
-    width: 100%;
-    /* background-color: var(--color1); */
+.slider__container {
+    overflow: hidden;
+    width: 100%;    
 }
+.slider {
+    display: flex;
+    transition: transform 1s ease;
+}
+
 .intro__img {
-    width: 100%;
-    height: 90%;
+    height: auto;
+    /* display: none; */
+    visibility: hidden;
 }
 .intro__description {
     width: 100%;

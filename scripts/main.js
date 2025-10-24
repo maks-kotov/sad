@@ -168,36 +168,38 @@ function createResult(start, middle, end) {
 // поиск написанннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
 
 // слайдер началооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооо
+const sliderContainer = document.querySelector('.slider__container') //сам слайдер (короткий)
+const slider = document.querySelector('.slider') //слайды (длинный)
+const slidersCount = slider.children.length
+let currentSlide = 0 // если класс active поставить второму элементу, этот код не заработает
+function showSlide(index) {
+    slider.children[currentSlide].classList.remove('active')
+    currentSlide = index
 
-const sliderPictures = ['./images/slider1.jpg', './images/slider2.png', './images/slider3.jpg', './images/slider5.jpeg']
-const slider = document.querySelector('.intro__img')
-// function slider() {
-    for (let i = 0; i < sliderPictures.length; i++) {
-                const path = sliderPictures[i];
-                setTimeout(() => {
-                    slider.src = path
-                    console.log('aaaa');
-                    
-                }, 3000 * i);
+    if (currentSlide >= slidersCount) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = slidersCount - 1;
     }
-    setInterval(() => {
-        for (let i = 0; i < sliderPictures.length; i++) {
-                const path = sliderPictures[i];
-                setTimeout(() => {
-                    slider.src = path
-                    console.log('aaaa');
-                    
-                }, 3000 * i);
-        }
-        console.log('начало нового цикла');
-        
-}, 12000);
-    // }
-// }
+
+    slider.children[currentSlide].classList.add('active')
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`
+    slider.children[currentSlide].style.minWidth = `${sliderContainer.offsetWidth}px`
+    slider.children[currentSlide].style.maxWidth = `${sliderContainer.offsetWidth}px`
+    
+}
+
+setInterval(() => {
+    showSlide((currentSlide + 1) % slidersCount)
+}, 3000);
 
 
+console.log(3 % 4); // 3, тк если первое число меньше второго, результат операции остатка будет равен первому числу.
+console.log(slider.children[0].children[0]);
+
+// showSlide(currentSlide)
 // слайдер конецццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццц
 
-
+// короче надо переписывать код со слайдером и понимать как он работает. такое ощущение, что у меня тут до этого был такой же код, но я работал с путями, а он с изображениями и непонятно как он их двигает
 
 
