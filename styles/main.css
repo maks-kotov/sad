@@ -28,7 +28,8 @@ mark {
 }
 .active {
     /* display: block !important; */
-    visibility: visible !important;
+    /* visibility: visible !important; */
+    /* transition: all 1s ease; */
 }
 /* header startttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  */
 header {
@@ -136,12 +137,29 @@ header {
 .slider__container {
     overflow: hidden;
     width: 100%;    
+    box-shadow: -1px 0 10px rgba(0,0,0,0.5);
+    position: relative;
 }
 .slider {
     display: flex;
+    /* gap: 0 50px; */
     transition: transform 1s ease;
 }
-
+.slider__buttons {
+    display: flex;
+    gap: 0 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slider__button {
+    height: 15px;
+    width: 15px;
+    border: 1px solid #000;
+    border-radius: 100%;
+    cursor: pointer;
+}
 .intro__img {
     height: auto;
     /* display: none; */

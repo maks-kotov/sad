@@ -171,9 +171,10 @@ function createResult(start, middle, end) {
 const sliderContainer = document.querySelector('.slider__container') //сам слайдер (короткий)
 const slider = document.querySelector('.slider') //слайды (длинный)
 const slidersCount = slider.children.length
-let currentSlide = 0 // если класс active поставить второму элементу, этот код не заработает
+let currentSlide = 0 
 function showSlide(index) {
-    slider.children[currentSlide].classList.remove('active')
+    slider.children[currentSlide].style.visibility = `hidden` // первый эл visible по умолчанию  
+    slider.children[currentSlide].style.transition = `visibility 1s ease`
     currentSlide = index
 
     if (currentSlide >= slidersCount) {
@@ -181,25 +182,26 @@ function showSlide(index) {
     } else if (currentSlide < 0) {
         currentSlide = slidersCount - 1;
     }
-
-    slider.children[currentSlide].classList.add('active')
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`
-    slider.children[currentSlide].style.minWidth = `${sliderContainer.offsetWidth}px`
-    slider.children[currentSlide].style.maxWidth = `${sliderContainer.offsetWidth}px`
     
+    slider.children[currentSlide].style.visibility = `visible` //второму слайду дарю видимость
+
+    slider.style.transform = `translateX(-${currentSlide * 100}%)` //сдвиг
+    slider.children[currentSlide].style.minWidth = `${sliderContainer.offsetWidth}px` //эти 2 строчки для последнего слайда который выходит за границы внешнего контейнера
+    slider.children[currentSlide].style.maxWidth = `${sliderContainer.offsetWidth}px`
+    // if(currentSlide === 0) {
+    //     slider.style.transition = `transform 1s ease`
+    // }
+    // else if(currentSlide == slidersCount - 1) {
+    //     slider.style.transition = `transform 0s ease`
+    // }
 }
 
 setInterval(() => {
     showSlide((currentSlide + 1) % slidersCount)
-}, 3000);
-
+}, 5000);
 
 console.log(3 % 4); // 3, тк если первое число меньше второго, результат операции остатка будет равен первому числу.
-console.log(slider.children[0].children[0]);
-
-// showSlide(currentSlide)
 // слайдер конецццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццц
 
-// короче надо переписывать код со слайдером и понимать как он работает. такое ощущение, что у меня тут до этого был такой же код, но я работал с путями, а он с изображениями и непонятно как он их двигает
 
 
