@@ -171,6 +171,7 @@ function createResult(start, middle, end) {
 const sliderContainer = document.querySelector('.slider__container') //сам слайдер (короткий)
 const slider = document.querySelector('.slider') //слайды (длинный)
 const slidersCount = slider.children.length
+const offSlider = document.querySelector('.offSlider')
 let currentSlide = 0 
 function showSlide(index) {
     slider.children[currentSlide].style.visibility = `hidden` // первый эл visible по умолчанию  
@@ -195,10 +196,27 @@ function showSlide(index) {
     //     slider.style.transition = `transform 0s ease`
     // }
 }
-
-setInterval(() => {
+let idInterval
+function changeSlides() {
     showSlide((currentSlide + 1) % slidersCount)
-}, 5000);
+}
+function startInterval() {
+    idInterval = setInterval(changeSlides, 1000)
+}
+function stopInterval() {
+            clearInterval(idInterval)
+}
+startInterval()
+
+offSlider.addEventListener('click', function () {
+    if(offSlider.checked) {
+        startInterval();
+    }
+    else {
+        stopInterval()
+    }
+})
+// idInterval хранит id текущего интервала, startInterval создаёт и запускает новый интервал, присваивая его id idInterval'у, stopInterval останавливает interval с текущим idInterval 
 
 console.log(3 % 4); // 3, тк если первое число меньше второго, результат операции остатка будет равен первому числу.
 // слайдер конецццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццц

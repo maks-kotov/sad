@@ -153,6 +153,11 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.offSlider {
+    position: absolute;
+    bottom: 1px;
+    right: 2px;
+}
 .slider__button {
     height: 15px;
     width: 15px;
