@@ -171,11 +171,13 @@ function createResult(start, middle, end) {
 const sliderContainer = document.querySelector('.slider__container') //сам слайдер (короткий)
 const slider = document.querySelector('.slider') //слайды (длинный)
 const slidersCount = slider.children.length
+const sliderButtons = document.querySelector('.slider__buttons')
 const offSlider = document.querySelector('.offSlider')
 let currentSlide = 0 
 function showSlide(index) {
     slider.children[currentSlide].style.visibility = `hidden` // первый эл visible по умолчанию  
     slider.children[currentSlide].style.transition = `visibility 1s ease`
+    sliderButtons.children[currentSlide].classList.remove('makeBlack')
     currentSlide = index
 
     if (currentSlide >= slidersCount) {
@@ -185,28 +187,22 @@ function showSlide(index) {
     }
     
     slider.children[currentSlide].style.visibility = `visible` //второму слайду дарю видимость
-
     slider.style.transform = `translateX(-${currentSlide * 100}%)` //сдвиг
     slider.children[currentSlide].style.minWidth = `${sliderContainer.offsetWidth}px` //эти 2 строчки для последнего слайда который выходит за границы внешнего контейнера
     slider.children[currentSlide].style.maxWidth = `${sliderContainer.offsetWidth}px`
-    // if(currentSlide === 0) {
-    //     slider.style.transition = `transform 1s ease`
-    // }
-    // else if(currentSlide == slidersCount - 1) {
-    //     slider.style.transition = `transform 0s ease`
-    // }
+    sliderButtons.children[currentSlide].classList.add('makeBlack')
 }
 let idInterval
 function changeSlides() {
     showSlide((currentSlide + 1) % slidersCount)
 }
-function startInterval() {
-    idInterval = setInterval(changeSlides, 1000)
+function startInterval(func, interval) {
+    idInterval = setInterval(func, interval)
 }
 function stopInterval() {
             clearInterval(idInterval)
 }
-startInterval()
+startInterval(changeSlides, 5000)
 
 offSlider.addEventListener('click', function () {
     if(offSlider.checked) {
