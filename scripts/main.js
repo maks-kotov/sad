@@ -103,7 +103,7 @@ function createCard(name, description, img, price) {
                         </p>
                     </div>
                     <div class="description__bottom">
-                        <span class="description__price">цена: <span>${price}р</span></span>
+                        <span class="description__price">Цена: <span>${price}р</span></span>
                         <a href="#"class="description__link">
                             <div class="description__button">Написать</div>
                         </a>
@@ -175,7 +175,7 @@ const sliderContainer = document.querySelector('.slider__container') //сам с
 const slider = document.querySelector('.slider') //слайды (длинный)
 const slidersCount = slider.children.length
 const sliderButtons = document.querySelector('.slider__buttons')
-const offSlider = document.querySelector('.offSlider')
+const sliderCheckbox = document.querySelector('.offSlider')
 let currentSlide = 0 
 function showSlide(index) {
     slider.children[currentSlide].style.visibility = `hidden` // первый эл visible по умолчанию  
@@ -191,8 +191,7 @@ function showSlide(index) {
     
     slider.children[currentSlide].style.visibility = `visible` //второму слайду дарю видимость
     slider.style.transform = `translateX(-${currentSlide * 100}%)` //сдвиг
-    slider.children[currentSlide].style.minWidth = `${sliderContainer.offsetWidth}px` //эти 2 строчки для последнего слайда который выходит за границы внешнего контейнера
-    slider.children[currentSlide].style.maxWidth = `${sliderContainer.offsetWidth}px`
+    slider.children[currentSlide].style.minWidth = `${sliderContainer.offsetWidth}px` //эта  строчка для последнего слайда который выходит за границы внешнего контейнера
     sliderButtons.children[currentSlide].classList.add('makeBlack')
 }
 let idInterval
@@ -205,11 +204,10 @@ function startInterval(func, interval) {
 function stopInterval() {
             clearInterval(idInterval)
 }
-startInterval(changeSlides, 5000)
 
-offSlider.addEventListener('click', function () {
-    if(offSlider.checked) {
-        startInterval();
+sliderCheckbox.addEventListener('click', function () {
+    if(sliderCheckbox.checked) {
+        startInterval(changeSlides, 1000);
     }
     else {
         stopInterval()

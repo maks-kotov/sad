@@ -15,6 +15,7 @@ body {
     align-items: center;
     color: #363636;
     line-height: 1.6;
+    font-size: 18px;
 }
 mark {
     color: inherit;
@@ -38,7 +39,7 @@ header {
     margin-bottom: 20px;
     justify-content: space-between;
     padding: 20px 30px;
-    /* color: #fff; */
+    color: #fff;
 }
 .logo {
     display: flex;
@@ -63,13 +64,10 @@ header {
 .menu > *:not(:last-child) {
     margin-right: 30px;
 }
-.search__label {
-    color: #363636;
-    /* font-weight: 500; */
-}
 .search {
     margin-left: 5px;
     height: 22px;
+    color: #363636;
 }
 .search__results {
     background-color: #fff;
@@ -137,7 +135,7 @@ header {
 .slider__container {
     overflow: hidden;
     width: 100%;    
-    box-shadow: -1px 0 10px rgba(0,0,0,0.5);
+    box-shadow: -1px 0 10px rgba(0,0,0,0.25);
     position: relative;
 }
 .slider {
@@ -245,6 +243,13 @@ header {
     align-items: center;
     margin-top: auto;
 }
+.description__price {
+    font-size: 22px;
+}
+.description__price > span {
+    font-size: 25px;
+    font-weight: bold;
+}
 .description__link {
     color: #fff;
     font-weight: 700;
@@ -275,5 +280,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: end;
+}
+.footer__year {
+    font-size: 20px;
+    font-weight: bold;
 }
 /* **************************************footer end*************************************************** */
