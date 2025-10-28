@@ -104,7 +104,7 @@ function createCard(name, description, img, price) {
                     </div>
                     <div class="description__bottom">
                         <span class="description__price">Цена: <span>${price}р</span></span>
-                        <a href="#"class="description__link">
+                        <a class="description__link">
                             <div class="description__button">Написать</div>
                         </a>
                         
@@ -215,8 +215,44 @@ sliderCheckbox.addEventListener('click', function () {
 })
 // idInterval хранит id текущего интервала, startInterval создаёт и запускает новый интервал, присваивая его id idInterval'у, stopInterval останавливает interval с текущим idInterval 
 
-console.log(3 % 4); // 3, тк если первое число меньше второго, результат операции остатка будет равен первому числу.
 // слайдер конецццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццц
 
+// действие при нажатии на написать началоооооооооооооооооооооооооооооооооооооооооооооооо
+const contactButtons = document.querySelectorAll('.description__link')
+const overlay = document.createElement('div')
+window.onload = function() { // чтобы высота overlay была равна настоящей высоте сайта
+            overlay.style.height = `${document.documentElement.scrollHeight}px`
+            overlay.style.width = '100%'
+            overlay.style.background = '#000000'
+            overlay.style.opacity = '0'
+            overlay.style.position = 'absolute'
+            overlay.style.transition = 'opacity 0.4s ease'
+    document.body.insertAdjacentElement('afterbegin', overlay)
+}
+const popUpMenu = document.querySelector('.popupMenu')
+let counter1 = 0
 
+function hidePopupMenu() {
+    // overlay.classList.toggle('hide')
+    if(counter1 % 2 === 0) {
+        popUpMenu.style.top = "50%"
+        overlay.style.opacity = '0.5'
+        overlay.style.zIndex = '1'
+
+    }
+    else if(counter1 % 2 !== 0) {
+        popUpMenu.style.top = "-30%"
+        overlay.style.opacity = '0'
+        overlay.style.zIndex = '0'
+    }
+    counter1++
+}
+for (const button of contactButtons) {
+    button.addEventListener('click', hidePopupMenu)
+}
+
+
+// действие при нажатии на написать конеццццццццццццццццццццццццццццццццццццццццццццццццц
+
+//в контекст меню при наведении одноклассники выходят за границу
 
