@@ -104,7 +104,10 @@ function createCard(name, description, img, price) {
                     </div>
                     <div class="description__bottom">
                         <span class="description__price">цена: <span>${price}р</span></span>
-                        <span class="description__button">Написать</span>
+                        <a href="#"class="description__link">
+                            <div class="description__button">Написать</div>
+                        </a>
+                        
                     </div>
                 </div>
             </section>
