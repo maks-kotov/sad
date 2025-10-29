@@ -257,20 +257,27 @@ for (const button of contactButtons) {
 // стилизацияяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя начало
 
 const menu_elArr = document.querySelectorAll('.menu_el')
+const contextMenuesArr = document.querySelectorAll('.contextMenu')
 // код ниже можно сказать делает для монитора hover, а для планшета / телефона click чтобы показать contextMenu 
 for (const menu_el of menu_elArr) {
+        const currentMenu = menu_el.children[0] 
         menu_el.addEventListener('mouseenter', function() {
-            menu_el.children[0].classList.toggle('hide')
+            currentMenu.classList.toggle('hide')
         })
         menu_el.addEventListener('mouseleave', function() {
-            menu_el.children[0].classList.toggle('hide')
+            currentMenu.classList.toggle('hide')
         })
 }
-        
+    
 if(window.innerWidth <= 980) {
-        for (const menu_el of menu_elArr) {
+    for (const menu_el of menu_elArr) {
         menu_el.addEventListener('click', function() {
-            menu_el.children[0].classList.toggle('hide')
+            // при клике все контекстные меню скрываются, а текущее показывается
+            const currentMenu = menu_el.children[0]
+            contextMenuesArr.forEach(currentMenu => {
+                currentMenu.classList.add('hide')
+            });
+            currentMenu.classList.remove('hide')
         })    
 }
 }
@@ -282,8 +289,6 @@ input.addEventListener('blur', function() {
     document.querySelector('.search__label').style.fontWeight = '400'
 })
 
-
-//в контекст меню при наведении одноклассники выходят за границу,убрать подсказки на инпуте и какую нибудь анимцию на него
 
 
 
