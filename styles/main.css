@@ -149,7 +149,7 @@ header {
 .contextMenu {
     background-color: #fff;
     position: absolute;
-    /* display: none; */
+    z-index: 1;
 }
 .contextMenu__link {
     color: #363636;
@@ -344,8 +344,5 @@ footer {
     header {
         flex-flow: column wrap;
         gap: 10px 0;
-    }
-    .menu {
-        /* flex-flow: column wrap; */
     }
 }

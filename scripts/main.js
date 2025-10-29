@@ -260,26 +260,43 @@ for (const button of contactButtons) {
 const menu_elArr = document.querySelectorAll('.menu_el')
 const contextMenuesArr = document.querySelectorAll('.contextMenu')
 // hover
-for (const menu_el of menu_elArr) {
+if(window.innerWidth >= 980) {
+    for (const menu_el of menu_elArr) {
         const currentMenu = menu_el.children[0] 
         menu_el.addEventListener('mouseenter', function() {
-            currentMenu.classList.toggle('hide')
+            currentMenu.classList.remove('hide')
         })
         menu_el.addEventListener('mouseleave', function() {
-            currentMenu.classList.toggle('hide')
+            currentMenu.classList.add('hide')
         })
+    }
 }
 // click (для кнопок в меню)    
 if(window.innerWidth <= 980) {
     for (const menu_el of menu_elArr) {
-        menu_el.addEventListener('click', function() {
-            // при клике все контекстные меню скрываются, а текущее показывается
-            const currentMenu = menu_el.children[0]
-            contextMenuesArr.forEach(currentMenu => {
-                currentMenu.classList.add('hide')
+        menu_el.addEventListener('click', function(event) {
+
+            const currentMenu = menu_el.children[0] // текущее контексное меню
+            
+            contextMenuesArr.forEach(menu => { 
+                if(menu !== currentMenu) { 
+                    menu.classList.add('hide') // не текущим контекстным меню класс hide
+                }
             });
-            currentMenu.classList.remove('hide')
-        })    
+            if(currentMenu.className.search('hide') !== -1) { // если hide найден у текущего
+                currentMenu.classList.remove('hide')
+            } 
+            else if(currentMenu.className.search('hide') === -1) {
+                currentMenu.classList.add('hide')
+            }
+            document.addEventListener('click', function(event) { // ваще какаято залупа с chatGpt
+                if (!menu_el.contains(event.target) && !currentMenu.contains(event.target)) {
+                    currentMenu.classList.add('hide')
+                }
+            })
+
+        }) 
+        
 }
 }
 //анимация инпута:
