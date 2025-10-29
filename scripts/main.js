@@ -254,5 +254,36 @@ for (const button of contactButtons) {
 
 // действие при нажатии на написать конеццццццццццццццццццццццццццццццццццццццццццццццццц
 
-//в контекст меню при наведении одноклассники выходят за границу
+// стилизацияяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя начало
+
+const menu_elArr = document.querySelectorAll('.menu_el')
+// код ниже можно сказать делает для монитора hover, а для планшета / телефона click чтобы показать contextMenu 
+for (const menu_el of menu_elArr) {
+        menu_el.addEventListener('mouseenter', function() {
+            menu_el.children[0].classList.toggle('hide')
+        })
+        menu_el.addEventListener('mouseleave', function() {
+            menu_el.children[0].classList.toggle('hide')
+        })
+}
+        
+if(window.innerWidth <= 980) {
+        for (const menu_el of menu_elArr) {
+        menu_el.addEventListener('click', function() {
+            menu_el.children[0].classList.toggle('hide')
+        })    
+}
+}
+//анимация инпута:
+input.addEventListener('focus', function() {
+    document.querySelector('.search__label').style.fontWeight = '600'
+})
+input.addEventListener('blur', function() {
+    document.querySelector('.search__label').style.fontWeight = '400'
+})
+
+
+//в контекст меню при наведении одноклассники выходят за границу,убрать подсказки на инпуте и какую нибудь анимцию на него
+
+
 
