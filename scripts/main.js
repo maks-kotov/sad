@@ -258,7 +258,7 @@ for (const button of contactButtons) {
 
 const menu_elArr = document.querySelectorAll('.menu_el')
 const contextMenuesArr = document.querySelectorAll('.contextMenu')
-// код ниже можно сказать делает для монитора hover, а для планшета / телефона click чтобы показать contextMenu 
+// hover
 for (const menu_el of menu_elArr) {
         const currentMenu = menu_el.children[0] 
         menu_el.addEventListener('mouseenter', function() {
@@ -268,7 +268,7 @@ for (const menu_el of menu_elArr) {
             currentMenu.classList.toggle('hide')
         })
 }
-    
+// click (для кнопок в меню)    
 if(window.innerWidth <= 980) {
     for (const menu_el of menu_elArr) {
         menu_el.addEventListener('click', function() {
