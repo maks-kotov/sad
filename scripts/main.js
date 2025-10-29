@@ -231,6 +231,7 @@ window.onload = function() { // чтобы высота overlay была рав�
 }
 const popUpMenu = document.querySelector('.popupMenu')
 let counter1 = 0
+console.log(popUpMenu.style.top);
 
 function hidePopupMenu() {
     // overlay.classList.toggle('hide')
@@ -241,7 +242,7 @@ function hidePopupMenu() {
 
     }
     else if(counter1 % 2 !== 0) {
-        popUpMenu.style.top = "-30%"
+        popUpMenu.style.top = "-100%"
         overlay.style.opacity = '0'
         overlay.style.zIndex = '0'
     }
@@ -283,10 +284,10 @@ if(window.innerWidth <= 980) {
 }
 //анимация инпута:
 input.addEventListener('focus', function() {
-    document.querySelector('.search__label').style.fontWeight = '600'
+    document.querySelector('.search__label').style.opacity = '1'
 })
 input.addEventListener('blur', function() {
-    document.querySelector('.search__label').style.fontWeight = '400'
+    document.querySelector('.search__label').style.opacity = '0.5'
 })
 
 
