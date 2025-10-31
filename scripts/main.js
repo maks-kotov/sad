@@ -275,7 +275,6 @@ if(window.innerWidth >= 980) {
 if(window.innerWidth <= 980) {
     for (const menu_el of menu_elArr) {
         menu_el.addEventListener('click', function(event) {
-
             const currentMenu = menu_el.children[0] // текущее контексное меню
             
             contextMenuesArr.forEach(menu => { 
@@ -283,15 +282,18 @@ if(window.innerWidth <= 980) {
                     menu.classList.add('hide') // не текущим контекстным меню класс hide
                 }
             });
-            if(currentMenu.className.search('hide') !== -1) { // если hide найден у текущего
+            console.log();
+            
+            if(currentMenu.classList.contains('hide')) { // если hide найден у текущего
                 currentMenu.classList.remove('hide')
             } 
-            else if(currentMenu.className.search('hide') === -1) {
+            else {
                 currentMenu.classList.add('hide')
             }
-            document.addEventListener('click', function(event) { // ваще какаято залупа с chatGpt
+            document.addEventListener('click', function(event) { 
                 if (!menu_el.contains(event.target) && !currentMenu.contains(event.target)) {
                     currentMenu.classList.add('hide')
+                    //если элемент на который мы кликнули не являтся дочерним элементом menu_el и currentMenu, то мы скрываем currentMenu
                 }
             })
 
@@ -306,6 +308,8 @@ input.addEventListener('focus', function() {
 input.addEventListener('blur', function() {
     document.querySelector('.search__label').style.opacity = '0.5'
 })
+// я хотел попробоват ьубрать image-block + сделать чтобы шрифт изменялся на одной из карточек при помощи медиа запросов
+
 
 
 
