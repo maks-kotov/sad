@@ -270,6 +270,9 @@ header {
     position: relative;
     align-self: flex-start;
 }
+.card__image {
+    max-height: 800px;
+}
 .card__title {
     text-align: center;
     font-size: 40px;
