@@ -84,7 +84,6 @@ const cardsInormation = [ //все данные из карточек
 function createCard(name, description, img, price) {
     return `
         <section class="card" id="${name}">
-                <div class="card__image-block">
                     <div class="card__image-container">
                         <img class="card__image" src="${img}">
                         
@@ -94,7 +93,6 @@ function createCard(name, description, img, price) {
                             </b>
                         </div>
                     </div>
-                </div>
                 <div class="card__description">
                     
                     <div class="description__text">
