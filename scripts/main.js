@@ -318,7 +318,8 @@ input.addEventListener('focus', function() {
 input.addEventListener('blur', function() {
     document.querySelector('.search__label').style.opacity = '0.5'
 })
-// я хотел попробоват ьубрать image-block + сделать чтобы шрифт изменялся на одной из карточек при помощи медиа запросов
+
+//убрать контекст меню, поправить мб уменьшить слайдер, сделать функцию показывающую popup
 
 
 
