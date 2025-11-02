@@ -340,14 +340,25 @@ footer {
 }
 /* **************************************footer end*************************************************** */
 @media (max-width: 1120px) {
-    /* .card__title {
-        font-size: 35px;
-    } */
-    #Раннелетний\ сорт\ селекции\ И\.В\.\ Мичурина > .card__title {
+    .card__title[data-name-is-long="1"] {
         font-size: 35px;
     }
 }
+@media (max-width: 1085px) {
+    .card__title[data-name-is-long="1"] {
+        top: 85%;
+    }
+}
+@media (max-width: 1045px) {
+    .card__title[data-name-is-long="1"] {
+        top: 75%;
+    }
+}
 @media (max-width: 980px) {
+    .card__title[data-name-is-long="1"] {
+        top: 88%;
+        font-size: 40px;
+    }
     header {
         flex-flow: column wrap;
         gap: 10px 0;
@@ -384,16 +395,21 @@ footer {
         margin: 0 !important;
     }
 }
-/* @media (max-width: 580px) {
-    .card__title {
+@media (max-width: 580px) {
+    .card__title[data-name-is-long="1"] {
         font-size: 35px;
     }
 }
 @media (max-width: 515px) {
-    .card__title {
+    .card__title[data-name-is-long="1"] {
         font-size: 30px;
     }
-} */
+} 
+@media (max-width: 440px) {
+    .card__title[data-name-is-long="1"] {
+        font-size: 25px;
+    }
+} 
 @media (max-width: 400px) {
     .menu_input {
         display: flex;
@@ -412,3 +428,8 @@ footer {
         max-width: min-content;
     }
 }
+@media (max-width: 365px) {
+    .card__title[data-name-is-long="1"] {
+        font-size: 20px;
+    }
+} 
