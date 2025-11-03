@@ -231,7 +231,11 @@ sliderCheckbox.addEventListener('click', function () {
 const contactButtons = document.querySelectorAll('.description__link')
 const overlay = document.createElement('div')
 const menu_elArr = document.querySelectorAll('.menu_el')
-
+const groups = document.querySelector('#groups')
+const write = document.querySelector('#write')
+const popUpMenu = document.querySelector('.popupMenu')
+const popupTitle = document.querySelector('.popupMenu__title')
+const popupMenuNetworks = document.querySelector('.popupMenu__networks')
 window.onload = function() { // чтобы высота overlay была равна настоящей высоте сайта
             overlay.style.height = `${document.documentElement.scrollHeight}px`
             overlay.style.width = '100%'
@@ -241,12 +245,63 @@ window.onload = function() { // чтобы высота overlay была рав�
             overlay.style.transition = 'opacity 0.4s ease'
     document.body.insertAdjacentElement('afterbegin', overlay)
 }
-const popUpMenu = document.querySelector('.popupMenu')
-let counter1 = 0
+let arr = ['asdds', 1, 2, 'hello']
+console.log(arr.includes(2));
 
-function showHidePopupMenu() {
+let counter1 = 0
+function insertNetworks(networks) {
+    return `
+            ${networks.includes('write vk') ? 
+                `
+                <a href="https://vk.com/id269890255" target="_blank" class="popupMenu__link">
+                    <img class="popupMenu__img" src="./images/icon-vk.png" alt="write vk">
+                </a>` 
+                : 
+                ''
+            }
+            ${networks.includes('write tg') ? 
+                `
+                <a href="https://t.me/Sergey76549" target="_blank" class="popupMenu__link">
+                    <img class="popupMenu__img" src="./images/icon_tg2.png" alt="write tg">
+                </a>
+                `
+                : 
+                ''
+            }
+            ${networks.includes('write odn') ? 
+                `
+                <a href="https://ok.ru/natalya.mix" target="_blank" class="popupMenu__link">
+                <img class="popupMenu__img" src="./images/icon_odnoklasniki.png" alt="write odn">
+                </a>
+                `
+                : 
+                ''
+            }
+            ${networks.includes('group vk') ? 
+                `
+                <a href="https://vk.com/zelenyisad?from=groups" target="_blank" class="popupMenu__link">
+                <img class="popupMenu__img" src="./images/icon-vk.png" alt="group vk">
+                </a>
+                `
+                : 
+                ''
+            }
+            ${networks.includes('group odn') ? 
+                `
+                <a href="https://ok.ru/zelenyisadok" target="_blank" class="popupMenu__link">
+                <img class="popupMenu__img" src="./images/icon_odnoklasniki.png" alt="group odn">
+                </a>
+                `
+                : 
+                ''
+            }
+    `
+}
+function showHidePopupMenu(text, networks) {
     // overlay.classList.toggle('hide')
     if(counter1 % 2 === 0) {
+        popupTitle.textContent = text
+        popupMenuNetworks.innerHTML = insertNetworks(networks)
         popUpMenu.style.top = "50%"
         overlay.style.opacity = '0.5'
         overlay.style.zIndex = '1'
@@ -259,11 +314,10 @@ function showHidePopupMenu() {
     counter1++
 }
 for (const button of contactButtons) {
-    button.addEventListener('click', showHidePopupMenu)
+    button.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите чат', ['write vk', 'write tg', 'write odn']))
 }
-for (const menu_el of menu_elArr) {
-    menu_el.addEventListener('click', showHidePopupMenu)
-}
+write.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите чат', ['write vk', 'write tg', 'write odn']))
+groups.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите группу', ['group vk', 'group odn']))
 
 
 // popup конеццццццццццццццццццццццццццццццццццццццццццццццццц
