@@ -7,7 +7,6 @@ let currentSlideIndex = 0
 function showSlide(index) {
     const currentSlide = slider.children[currentSlideIndex] 
     
-    currentSlide.style.visibility = `hidden` //первый эл visible поумолчанию (в html прописано)  
     sliderButtons.children[currentSlideIndex].classList.remove('makeBlack')
     currentSlideIndex = index
 
@@ -16,10 +15,9 @@ function showSlide(index) {
     } else if (currentSlideIndex < 0) {
         currentSlideIndex = slidersCount - 1;
     }
-    
-    currentSlide.style.visibility = `visible` //второму слайду дарю видимость
+
+    slider.children[currentSlideIndex].style.minWidth = `${sliderContainer.offsetWidth}px` // если ширина изображения меньше ширины контейнера, то оно растянется под ширину контейнера
     slider.style.transform = `translateX(-${currentSlideIndex * 100}%)` //сдвиг
-    currentSlide.style.minWidth = `${sliderContainer.offsetWidth}px` //эта  строчка для последнего слайда который выходит за границы внешнего контейнера
     sliderButtons.children[currentSlideIndex].classList.add('makeBlack')
 }
 let idInterval
