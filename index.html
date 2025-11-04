@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зелёный Сад</title>
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> -->
-
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
@@ -16,20 +12,12 @@
 </head>
 <body>
     <div class="popupMenu">
-        <div class="krestik" onclick="showHidePopupMenu()">✗</div>
+        <div class="krestik">✗</div>
         <div class="popupMenu__center">
             <span class="popupMenu__title">Выберите чат</span>
         </div>
         <div class="popupMenu__networks">
-            <!-- <a href="https://vk.com/id269890255" target="_blank" class="popupMenu__link">
-                <img class="popupMenu__img" src="./images/icon-vk.png" alt="">
-            </a>
-            <a href="https://t.me/Sergey76549" target="_blank" class="popupMenu__link">
-                <img class="popupMenu__img" src="./images/icon_tg2.png" alt="">
-            </a>
-            <a href="https://ok.ru/zelenyisadok" target="_blank" class="popupMenu__link">
-                <img class="popupMenu__img" src="./images/icon_odnoklasniki.png" alt="">
-            </a> -->
+            <!-- динамически из js -->
         </div>
     </div>
     <div class="container">
@@ -54,47 +42,9 @@
                 </div>
                 <div class="menu_el" id="groups">
                     Группы ▾
-                    <ul class="contextMenu hide">
-                        <a target="_blank" href="https://vk.com/zelenyisad?from=groups" class="contextMenu__link">
-                            <li class="contextMenu__item">
-                                <div>Вк</div>
-                                    <div class="icon">
-                                        <img class="" src="./images/icon-vk2.png" alt="vk">
-                                    </div>
-                                    
-                            </li>
-                        </a>
-                        <a target="_blank" class="contextMenu__link" href="https://ok.ru/zelenyisadok">
-                            <li class="contextMenu__item" style="min-width: 190px;">
-                                <div>Одноклассники</div>
-                                <div class="icon">
-                                    <img class="" src="./images/icon_odnoklasniki.png" alt="odn">
-                                </div>
-                                
-                            </li>
-                        </a>
-                    </ul>
                 </div>
                 <div class="menu_el" id="write">
                     Написать ▾
-                    <ul class="contextMenu hide">
-                        <a target="_blank" href="https://vk.com/id269890255" class="contextMenu__link">
-                            <li class="contextMenu__item">
-                                <div>Вк</div>
-                                <div class="icon">
-                                    <img src="./images/icon-vk2.png" alt="vk">
-                                </div>
-                            </li>
-                        </a>
-                        <a target="_blank" href="https://t.me/Sergey76549" class="contextMenu__link">
-                            <li class="contextMenu__item">
-                                <div>Телеграм</div>
-                                <div class="icon">
-                                    <img src="./images/icon_tg2.png" alt="odn">
-                                </div>
-                            </li>
-                        </a>
-                    </ul>
                 </div>
             </div>
         </header>
@@ -155,21 +105,7 @@
         </section>
             <!-- а тут груши -->
         
-        <div class="autro">
-                                <!-- <p class="autro__text">
-                                    Если у вас остались какие-нибудь вопросы вы всегда можете обратиться по телефону или написать нам в соц.сетях: 
-                                    <a href="#">
-                                        <img class="icon" src="./images/icon-vk2.png" alt="vk">
-                                    </a>
-                                    <a href="#">
-                                        <img class="icon" src="./images/icon_odnoklasniki.png" alt="vk">
-                                    </a>
-                                    <a href="#">
-                                        <img class="icon" src="./images/icon_tg2.png" alt="vk">
-                                    </a>
-                                    89991091859
-                                </p>-->
-        </div> 
+        <div class="autro"></div> 
     </div> 
     
     <footer>
@@ -179,8 +115,9 @@
     </footer>
 
     
-    
-    <script src="scripts/main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="./scripts/1inputAnumation.js"></script>
+    <script type="module" src="./scripts/2popup.js"></script>
 
 </body>
 </html>
