@@ -40,3 +40,9 @@ sliderCheckbox.addEventListener('click', function () {
         stopInterval()
     }
 })
+
+for (let i=0; i < sliderButtons.children.length; i++) {
+    sliderButtons.children[i].addEventListener('click', showSlide.bind(null, i))    
+}
+
+
