@@ -73,34 +73,28 @@ function hidePopupOnClickOutside() {
                 && !event.target.classList.contains('description__button')
                 ) 
                 {
-                    console.log('клик вне попуп'); 
-                    showHidePopupMenu()
+                    hidePopup()
             }
 }
-let counter1 = 0 // счётчик, отслеживающий закрыто или открыто popup. чётное - открыть. нечётное - закрыть (для showHidePopupMenu)
-function showHidePopupMenu(text, networks) {
-    if(counter1 % 2 === 0) {
-        popupTitle.textContent = text
-        popupMenuNetworks.innerHTML = insertNetworks(networks) // вставляет в разметку соц сети, взависиммости от переданого массива
-        popUpMenu.style.top = "50%"
-        overlay.style.opacity = '0.5'
-        overlay.style.zIndex = '1'
-        document.addEventListener('click', hidePopupOnClickOutside) //чтобы при нажатии вне popup popup закрывался
-        
-    }
-    else if(counter1 % 2 !== 0) {
+function showPopup(text, networks) {
+    popupTitle.textContent = text
+    popupMenuNetworks.innerHTML = insertNetworks(networks) // вставляет в разметку соц сети, взависиммости от переданого массива
+    popUpMenu.style.top = "50%"
+    overlay.style.opacity = '0.5'
+    overlay.style.zIndex = '1'
+    document.addEventListener('click', hidePopupOnClickOutside)
+}
+function hidePopup() {
         popUpMenu.style.top = "-100%"
         overlay.style.opacity = '0'
         overlay.style.zIndex = '0'
         document.removeEventListener('click', hidePopupOnClickOutside)
-    }
-    counter1++
 }
 for (const button of contactButtons) { // вешаем функцию на кнопки написать
-    button.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите чат', ['write vk', 'write tg', 'write odn']))
+    button.addEventListener('click', showPopup.bind(null, 'Выберите чат', ['write vk', 'write tg', 'write odn']))
 }
-write.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите чат', ['write vk', 'write tg', 'write odn']))
-groups.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите группу', ['group vk', 'group odn']))
-krestik.addEventListener('click', showHidePopupMenu)
+write.addEventListener('click', showPopup.bind(null, 'Выберите чат', ['write vk', 'write tg', 'write odn']))
+groups.addEventListener('click', showPopup.bind(null, 'Выберите группу', ['group vk', 'group odn']))
+krestik.addEventListener('click', hidePopup)
 
 

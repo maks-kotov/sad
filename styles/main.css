@@ -221,8 +221,7 @@ header {
 }
 .intro__img {
     height: auto;
-    /* display: none; */
-    visibility: hidden;
+    transition: visibility 1s ease;
 }
 .intro__description {
     width: 100%;
