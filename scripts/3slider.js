@@ -31,14 +31,16 @@ function stopInterval() {
             clearInterval(idInterval)
 }
 
-sliderCheckbox.addEventListener('click', function () {
+function checkingCheckbox() {
     if(sliderCheckbox.checked) {
-        startInterval(changeSlides, 1000);
+        startInterval(changeSlides, 5000);
     }
     else {
         stopInterval()
     }
-})
+}
+checkingCheckbox()
+sliderCheckbox.addEventListener('click', checkingCheckbox)
 
 for (let i=0; i < sliderButtons.children.length; i++) {
     sliderButtons.children[i].addEventListener('click', showSlide.bind(null, i))    
