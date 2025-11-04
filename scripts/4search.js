@@ -17,11 +17,11 @@ input.addEventListener('input', function() {
     if(inputValue == '') {
         for (const a of searchResults.children) { // добавляем всем li класс hide
             a.classList.add('hide')            
-            document.querySelector('.search__results').classList.add('hide')     
+            searchResults.classList.add('hide')     
         }
     }
     else {
-            document.querySelector('.search__results').classList.remove('hide')
+            searchResults.classList.remove('hide')
         for (const a of searchResults.children) {
             const liText =  a.children[0].textContent.trim()
             

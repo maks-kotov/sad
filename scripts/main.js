@@ -1,7 +1,6 @@
 const intro = document.getElementById('intro')
 const apples = document.getElementById('apples') //место после которого будут вставляться карточки с яблоками
 const pears = document.getElementById('pears') // место полсе которого будут встваляться карточки с грушаи
-// const cardsArray = document.getElementsByClassName('card')
 
 export const cardsInormation = [ //все данные из карточек
     {
@@ -123,7 +122,7 @@ function createCard(name, description, img, price, isLong) {
 }
 
 cardsInormation.forEach(card => { //вставить карточки в код
-    // если цена 500, то вносим карточку после надписи яблони, если 600, то груши (просто я вид не делал в массивах (вид дерева))
+    // если цена 500, то вносим карточку после надписи яблони, если 600, то груши (просто я вид не делал в cardsInformation (вид дерева))
     if (Number(card.price) === 500) {
         apples.insertAdjacentHTML("afterend", createCard(card.name, card.description, card.img, card.price, card.nameIsLong))
     }
