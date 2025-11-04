@@ -1,8 +1,6 @@
 const intro = document.getElementById('intro')
 const apples = document.getElementById('apples') //место после которого будут вставляться карточки с яблоками
 const pears = document.getElementById('pears') // место полсе которого будут встваляться карточки с грушаи
-const input = document.getElementById('input')
-const searchResults = document.getElementById('searchResults')
 // const cardsArray = document.getElementsByClassName('card')
 
 export const cardsInormation = [ //все данные из карточек
@@ -133,49 +131,3 @@ cardsInormation.forEach(card => { //вставить карточки в код
         pears.insertAdjacentHTML("afterend", createCard(card.name, card.description, card.img, card.price, card.nameIsLong))
     }
 });
-
-//реализация поискаааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа
-for (const card of cardsInormation) { // заносим в searchResults все сорта 
-    searchResults.insertAdjacentHTML('beforeend', `<a href="#${card.name}" class="search__a">
-        <li class="search__li">${card.name}</li>
-        </a>`)
-}
-for (const a of searchResults.children) { // добавляем всем a класс hide (результатам)
-    a.classList.add('hide')            
-}
-input.addEventListener('input', function() {
-    const inputValue = input.value.trim().toLowerCase()
-    const inputLength = inputValue.length
-    if(inputValue == '') {
-        for (const a of searchResults.children) { // добавляем всем li класс hide
-            a.classList.add('hide')            
-            document.querySelector('.search__results').classList.add('hide')     
-        }
-    }
-    else {
-                document.querySelector('.search__results').classList.remove('hide')
-        for (const a of searchResults.children) {
-            const liText =  a.children[0].textContent.trim()
-            
-            const posStr = liText.toLowerCase().search(inputValue)
-
-            if(posStr === -1) {
-                a.classList.add('hide')
-
-            }
-            else {
-                a.classList.remove('hide')
-                a.children[0].innerHTML = createResult(
-                liText.slice(0, posStr),
-                liText.slice(posStr, posStr+inputLength),
-                liText.slice(posStr+inputLength, liText.length)
-            )
-            }    
-        }
-        
-    }
-})
-function createResult(start, middle, end) {
-    return `${start}<mark>${middle}</mark>${end}`
-}
-// поиск написанннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
