@@ -65,6 +65,18 @@ function insertNetworks(networks) {
             }
     `
 }
+function hidePopupOnClickOutside() {
+    if ( 
+                !popUpMenu.contains(event.target)
+                && !write.contains(event.target) 
+                && !groups.contains(event.target)
+                && !event.target.classList.contains('description__button')
+                ) 
+                {
+                    console.log('клик вне попуп'); 
+                    showHidePopupMenu()
+            }
+}
 let counter1 = 0 // счётчик, отслеживающий закрыто или открыто popup. чётное - открыть. нечётное - закрыть (для showHidePopupMenu)
 function showHidePopupMenu(text, networks) {
     if(counter1 % 2 === 0) {
@@ -73,11 +85,14 @@ function showHidePopupMenu(text, networks) {
         popUpMenu.style.top = "50%"
         overlay.style.opacity = '0.5'
         overlay.style.zIndex = '1'
+        document.addEventListener('click', hidePopupOnClickOutside) //чтобы при нажатии вне popup popup закрывался
+        
     }
     else if(counter1 % 2 !== 0) {
         popUpMenu.style.top = "-100%"
         overlay.style.opacity = '0'
         overlay.style.zIndex = '0'
+        document.removeEventListener('click', hidePopupOnClickOutside)
     }
     counter1++
 }
@@ -87,17 +102,5 @@ for (const button of contactButtons) { // вешаем функцию на кн�
 write.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите чат', ['write vk', 'write tg', 'write odn']))
 groups.addEventListener('click', showHidePopupMenu.bind(null, 'Выберите группу', ['group vk', 'group odn']))
 krestik.addEventListener('click', showHidePopupMenu)
-if(counter1 % 2 === 0) { // когда popup открыт, если клик был вне popup, то оно закроется.
-    document.addEventListener('click', function(event) {
-            if (
-                !popUpMenu.contains(event.target)
-                && !write.contains(event.target) 
-                && !groups.contains(event.target)
-                && !event.target.classList.contains('description__button')
-                ) 
-                {
-                showHidePopupMenu()
-            }
-    })
-}
+
 

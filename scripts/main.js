@@ -181,7 +181,7 @@ function createResult(start, middle, end) {
 // поиск написанннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннннн
 
 // слайдер началооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооо
-const sliderContainer = document.querySelector('.slider__container') //сам слайдер (короткий)
+/* const sliderContainer = document.querySelector('.slider__container') //сам слайдер (короткий)
 const slider = document.querySelector('.slider') //слайды (длинный)
 const slidersCount = slider.children.length
 const sliderButtons = document.querySelector('.slider__buttons')
@@ -222,15 +222,7 @@ sliderCheckbox.addEventListener('click', function () {
     else {
         stopInterval()
     }
-})
+}) */
 // idInterval хранит id текущего интервала, startInterval создаёт и запускает новый интервал, присваивая его id idInterval'у, stopInterval останавливает interval с текущим idInterval 
 
 // слайдер конецццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццццц
-
-//остановился на делании модулей, проблемы с 2popup (нажатием на не popup и сохранении popup)
-
-
-
-
-
-
