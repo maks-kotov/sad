@@ -12,10 +12,10 @@ window.onload = function() { // чтобы высота overlay была рав�
             overlay.style.height = `${document.documentElement.scrollHeight}px`
             overlay.style.width = '100%'
             overlay.style.background = '#000000'
-            overlay.style.opacity = '0'
             overlay.style.position = 'absolute'
             overlay.style.transition = 'opacity 0.4s ease'
-    document.body.insertAdjacentElement('afterbegin', overlay)
+            overlay.style.opacity = '0.5'
+            overlay.style.zIndex = '1'
 }
 function insertNetworks(networks) {
     return `
@@ -80,14 +80,13 @@ function showPopup(text, networks) {
     popupTitle.textContent = text
     popupMenuNetworks.innerHTML = insertNetworks(networks) // вставляет в разметку соц сети, взависиммости от переданого массива
     popUpMenu.style.top = "50%"
-    overlay.style.opacity = '0.5'
-    overlay.style.zIndex = '1'
+    
+    document.body.insertAdjacentElement('afterbegin', overlay)
     document.addEventListener('click', hidePopupOnClickOutside)
 }
 function hidePopup() {
         popUpMenu.style.top = "-100%"
-        overlay.style.opacity = '0'
-        overlay.style.zIndex = '0'
+        overlay.remove()
         document.removeEventListener('click', hidePopupOnClickOutside)
 }
 for (const button of contactButtons) { // вешаем функцию на кнопки написать

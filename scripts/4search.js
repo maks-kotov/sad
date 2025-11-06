@@ -46,3 +46,4 @@ input.addEventListener('input', function() {
 function createResult(start, middle, end) {
     return `${start}<mark>${middle}</mark>${end}`
 }
+//остановился на редактировании надписей на карточках, паддинг сверху которйы  не прописывал
