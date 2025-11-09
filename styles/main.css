@@ -390,7 +390,7 @@ footer {
         font-size: 30px;
     }
 } 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
     .card__title[data-name-is-long="0"] {
         font-size: 35px;
     }
@@ -398,7 +398,15 @@ footer {
         font-size: 35px;
     }
 } 
+@media (max-width: 420px) {
+    .card__title[data-name-is-long="0.5"] {
+        font-size: 30px;
+    }
+} 
 @media (max-width: 400px) {
+    .logo {
+        flex-flow: column wrap;
+    }
     .menu_input {
         display: flex;
         align-items: center;
@@ -419,5 +427,8 @@ footer {
 @media (max-width: 365px) {
     .card__title[data-name-is-long="1"] {
         font-size: 20px;
+    }
+    .card__title[data-name-is-long="0.5"] {
+        font-size: 25px;
     }
 } 
