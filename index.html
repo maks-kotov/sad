@@ -1,127 +1,149 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зелёный Сад</title>
 
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <title>Зелёный Сад</title>
+
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="shortcut icon" href="./images/icon.png"
+    type="image/x-icon">
 
 </head>
+
 <body>
-    <div class="popupMenu">
-        <div class="krestik">✗</div>
-        <div class="popupMenu__center">
-            <span class="popupMenu__title">
-                <!-- динамически из js -->
-            </span>
-        </div>
-        <div class="popupMenu__networks">
-            <!-- динамически из js -->
-        </div>
+  <div class="popupMenu">
+    <div class="krestik">✗</div>
+    <div class="popupMenu__center">
+      <span class="popupMenu__title">
+        <!-- динамически из js -->
+      </span>
     </div>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <a href="#">
-                    <div>
-                        <img class="logo__img" src="./images/logo_icon1.png" alt="logo">
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="logo__text">Зелёный сад</div>
-                </a>
-            </div>
-            <div class="menu">
-                <div class="menu_input">
-                    <label class="search__label">Поиск:</label>
-                    <input autocomplete="off" class="search" id="input" type="text">
-                    <ul class="search__results hide" id="searchResults">
-                        <!-- здесь будут динамически появляться результаты поиска -->
-                    </ul>
-                </div>
-                <div class="menu_el" id="groups">
-                    Группы ▾
-                </div>
-                <div class="menu_el" id="write">
-                    Написать ▾
-                </div>
-            </div>
-        </header>
-        
-        <section class="intro" id="intro">
-                <div class="slider__container">
-                    <div class="slider">
-                            <img class="intro__img" src="./images/slider1.jpg" alt="apples">
-                            <img class="intro__img" src="./images/slider2.png" alt="apples">
-                            <img class="intro__img" src="./images/slider3.jpg" alt="apples">
-                            <img class="intro__img" src="./images/slider5.jpeg" alt="apples">
-                    </div>
-                    <div class="slider__buttons">
-                        <div class="slider__button makeBlack"></div>
-                        <div class="slider__button"></div>
-                        <div class="slider__button"></div>
-                        <div class="slider__button"></div>
-                    </div>
-                    <input type="checkbox" checked class="offSlider">
-                </div>
-
-            <div class="intro__description">
-                <p>
-                    <b> 
-                    Мечтаете о собственном плодовом саде? Начните с качественных саженцев!</p>
-                    </b>
-                <p>
-                В селе Грачёвка я предлагаю к продаже здоровые и крепкие саженцы яблонь и груш. Это отличная возможность вырастить свои собственные, экологически чистые фрукты прямо на участке!
-                </p>
-                <br>
-                <p>
-                    🍎 <b>Яблони: </b>Разнообразные сорта, адаптированные к нашему климату, которые будут радовать вас сочными плодами.
-                </p>
-                <p>
-                    🍐 <b>Груши: </b>Выбирайте из лучших сортов, чтобы наслаждаться ароматными и сладкими грушами.
-                </p>
-                <br>
-                <p>
-                    Цены: от 500 до 600 рублей за саженец.
-                </p>
-                <br>
-                <p>
-                    Приезжайте в Грачёвку и выберите саженцы для своего будущего урожая!
-                </p>
-            </div>
-        </section>
-        <div class="catalog">
-            <div class="catalog__text">Каталог</div>
+    <div class="popupMenu__networks">
+      <!-- динамически из js -->
+    </div>
+  </div>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <a href="#">
+          <div>
+            <img class="logo__img"
+              src="./images/logo_icon1.png" alt="logo">
+          </div>
+        </a>
+        <a href="#">
+          <div class="logo__text">Зелёный сад</div>
+        </a>
+      </div>
+      <div class="menu">
+        <div class="menu_input">
+          <label class="search__label">Поиск:</label>
+          <input autocomplete="off" class="search"
+            id="input" type="text">
+          <ul class="search__results hide"
+            id="searchResults">
+            <!-- здесь будут динамически появляться результаты поиска -->
+          </ul>
         </div>
-        <section class="typeOfPruduct__container" id="apples">
-            <div class="typeOfPruduct__text">Яблони</div>
-        </section>
-
-            <!-- карточки появляются динамически из js (чтобы не было многократного повтора кода) -->
-            <!-- здесь будут яблони -->
-        <section class="typeOfPruduct__container" id="pears">
-            <div class="typeOfPruduct__text">Груши</div>
-        </section>
-            <!-- а тут груши -->
-        
-        <div class="autro"></div> 
-    </div> 
-    
-    <footer>
-        <div class="footer__year">
-            &copy;2025
+        <div class="menu_el" id="groups">
+          Группы ▾
         </div>
-    </footer>
+        <div class="menu_el" id="write">
+          Написать ▾
+        </div>
+      </div>
+    </header>
 
-    
-    <script type="module" src="./scripts/main.js"></script>
-    <script type="module" src="./scripts/1inputAnumation.js"></script>
-    <script type="module" src="./scripts/2popup.js"></script>
-    <script type="module" src="./scripts/3slider.js"></script>
-    <script type="module" src="./scripts/4search.js"></script>
+    <section class="intro" id="intro">
+      <div class="slider__container">
+        <div class="slider">
+          <img class="intro__img" src="./images/slider1.jpg"
+            alt="apples">
+          <img class="intro__img" src="./images/slider2.png"
+            alt="apples">
+          <img class="intro__img" src="./images/slider3.jpg"
+            alt="apples">
+          <img class="intro__img"
+            src="./images/slider5.jpeg" alt="apples">
+        </div>
+        <div class="slider__buttons">
+          <div class="slider__button makeBlack"></div>
+          <div class="slider__button"></div>
+          <div class="slider__button"></div>
+          <div class="slider__button"></div>
+        </div>
+        <input type="checkbox" checked class="offSlider">
+      </div>
+
+      <div class="intro__description">
+        <p>
+          <b>
+            Мечтаете о собственном плодовом саде? Начните с
+            качественных саженцев!
+        </p>
+        </b>
+        <p>
+          В селе Грачёвка я предлагаю к продаже здоровые и
+          крепкие саженцы яблонь и груш. Это отличная
+          возможность вырастить свои собственные,
+          экологически чистые фрукты прямо на участке!
+        </p>
+        <br>
+        <p>
+          🍎 <b>Яблони: </b>Разнообразные сорта,
+          адаптированные к нашему климату, которые будут
+          радовать вас сочными плодами.
+        </p>
+        <p>
+          🍐 <b>Груши: </b>Выбирайте из лучших сортов, чтобы
+          наслаждаться ароматными и сладкими грушами.
+        </p>
+        <br>
+        <p>
+          Цены: от 500 до 600 рублей за саженец.
+        </p>
+        <br>
+        <p>
+          Приезжайте в Грачёвку и выберите саженцы для
+          своего будущего урожая!
+        </p>
+      </div>
+    </section>
+    <div class="catalog">
+      <div class="catalog__text">Каталог</div>
+    </div>
+    <section class="typeOfPruduct__container" id="apples">
+      <div class="typeOfPruduct__text">Яблони</div>
+    </section>
+
+    <!-- карточки появляются динамически из js (чтобы не было многократного повтора кода) -->
+    <!-- здесь будут яблони -->
+    <section class="typeOfPruduct__container" id="pears">
+      <div class="typeOfPruduct__text">Груши</div>
+    </section>
+    <!-- а тут груши -->
+
+    <div class="autro"></div>
+  </div>
+
+  <footer>
+    <div class="footer__year">
+      &copy;2025
+    </div>
+  </footer>
+
+
+  <script type="module" src="./scripts/main.js"></script>
+  <script type="module"
+    src="./scripts/1inputAnumation.js"></script>
+  <script type="module" src="./scripts/2popup.js"></script>
+  <script type="module" src="./scripts/3slider.js"></script>
+  <script type="module" src="./scripts/4search.js"></script>
 
 </body>
+
 </html>
